@@ -1,2 +1,2 @@
-# Cloud-WebAR-Try-On
+# Lightweight-WebAR-Jewelry-Customization
 An interesting exploration of AR
