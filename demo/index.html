@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>MEETING</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	</head>
+
+	<body>
+
+	<canvas id="canvas" style="position:fixed;top:0px;left:0px;z-index:-1;"></canvas>
+	<video id="video" width="1000px" height="1000px" autoplay="autoplay"style="position:fixed;top:0px;left:0px;z-index:-2;"></video>
+	<script>
+		var w = window.innerWidth;
+		var h = window.innerHeight;
+		//let mediaStreamTrack=null; // 视频对象(全局)
+		//开始进行相机相关代码
+		let video ;
+		function openMedia() {
+			let constraints = {
+				video: { width: w, height: h },
+				audio: false
+			};
+			//获得video摄像头
+			video = document.getElementById('video');
+			video.width=w;
+			video.height=h;
+			let promise = navigator.mediaDevices.getUserMedia(constraints);
+			promise.then((mediaStream) => {
+				// mediaStreamTrack = typeof mediaStream.stop === 'function' ? mediaStream : mediaStream.getTracks()[1];
+				mediaStreamTrack=mediaStream.getVideoTracks()
+				video.srcObject = mediaStream;
+				video.play();
+			});
+		}openMedia();
+		//完成进行相机相关代码
+	</script>
+
+	<script src="js/lib/threeJS/three.js"></script>
+	<script src="js/lib/threeJS/GLTFLoader.js"></script>
+	<script src="js/lib/threeJS/OrbitControls.js"></script>
+	<script src="js/lib/threeJS/Detector.js"></script>
+	<script src="js/lib/threeJS/stats.min.js"></script>
+
+	<script src="js/lib/PlayerControl.js"></script>
+
+	<script src="js/Main.js"></script>
+
+	<script type="module">
+		var myMain = new Main();
+		myMain.start();
+
+		new PlayerControl(myMain.camera);//.cullingTest(myMain.scene)
+
+		console.log(myMain.renderer.domElement);
+		
+		//加载模型
+		
+		//var camera, scene, renderer, light;
+
+
+
+		// envmap
+		var path = './blackcube/';
+		var format = '.jpg';
+		var envMap = new THREE.CubeTextureLoader().load( [
+			path + 'posx' + format, path + 'negx' + format,
+			path + 'posy' + format, path + 'negy' + format,
+			path + 'posz' + format, path + 'negz' + format
+		] );
+
+		
+
+		// model
+		var loader = new THREE.GLTFLoader();
+		loader.load( './rings/ring_17/ring_17.gltf', function ( gltf ) {
+
+			gltf.scene.traverse( function ( child ) {
+
+				if ( child.isMesh ) {
+
+					//child.material.envMap = envMap;
+
+				}
+
+			} );
+
+			myMain.scene.add( gltf.scene );
+
+		} );
+	
+
+		window.addEventListener( 'resize', onWindowResize, false );
+	
+		light = new THREE.HemisphereLight( 0xbbbbff, 0x444422 );
+		light.position.set( 0, 1, 0 );
+		myMain.scene.add( light );
+
+		
+
+	</script>
+	</body>
+</html>
