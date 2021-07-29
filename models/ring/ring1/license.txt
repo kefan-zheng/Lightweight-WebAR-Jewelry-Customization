@@ -1,0 +1,11 @@
+Model Information:
+* title:	One Ring
+* source:	https://sketchfab.com/3d-models/one-ring-247159eef183450a81887b569ba838c9
+* author:	VirtualBG (https://sketchfab.com/undereality)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "One Ring" (https://sketchfab.com/3d-models/one-ring-247159eef183450a81887b569ba838c9) by VirtualBG (https://sketchfab.com/undereality) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

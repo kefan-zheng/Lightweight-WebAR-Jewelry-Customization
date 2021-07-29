@@ -1,0 +1,345 @@
+{
+  "accessors": [
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 65532,
+      "max": [
+        10.528299331665039,
+        12.83799934387207,
+        5.0059995651245117
+      ],
+      "min": [
+        0,
+        0.67339992523193359,
+        0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 786384,
+      "componentType": 5126,
+      "count": 65532,
+      "max": [
+        1,
+        1,
+        1
+      ],
+      "min": [
+        -1,
+        -1,
+        -1
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 308292,
+      "max": [
+        65531
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1572768,
+      "componentType": 5126,
+      "count": 1315,
+      "max": [
+        7.6886000633239746,
+        2.9265995025634766,
+        3.2810001373291016
+      ],
+      "min": [
+        5.826200008392334,
+        0.87020015716552734,
+        1.6942000389099121
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1588548,
+      "componentType": 5126,
+      "count": 1315,
+      "max": [
+        0.98728138208389282,
+        0.99975794553756714,
+        0.97855466604232788
+      ],
+      "min": [
+        -0.99999916553497314,
+        -0.99905502796173096,
+        -0.99854499101638794
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 1233168,
+      "componentType": 5125,
+      "count": 6483,
+      "max": [
+        1314
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1604328,
+      "componentType": 5126,
+      "count": 192,
+      "max": [
+        7.6432995796203613,
+        3.1198997497558594,
+        4.8817996978759766
+      ],
+      "min": [
+        2.8849997520446777,
+        0,
+        0.12349987030029297
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1606632,
+      "componentType": 5126,
+      "count": 192,
+      "max": [
+        0.75011897087097168,
+        0.73136276006698608,
+        0.75011897087097168
+      ],
+      "min": [
+        -0.75011897087097168,
+        -1,
+        -0.75011897087097168
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 1259100,
+      "componentType": 5125,
+      "count": 234,
+      "max": [
+        191
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "T-FLEX CAD ST (Free) (https://sketchfab.com/tflexcad)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/ring-4d38f2907114426b8b9b1068ea9e2f14",
+      "title": "Ring"
+    },
+    "generator": "Sketchfab-6.24.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 1260036,
+      "byteOffset": 0,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1608936,
+      "byteOffset": 1260036,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 2868972,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "02___Default",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          0.51759999999999995,
+          0,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.050000000000000003
+      }
+    },
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "03___Default",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.11939222858545763,
+          0.11060147894174437,
+          0.16,
+          0.92000000000000004
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.099999999999999978
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0
+          },
+          "indices": 2,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 4,
+            "POSITION": 3
+          },
+          "indices": 5,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 7,
+            "POSITION": 6
+          },
+          "indices": 8,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode (gltf orientation matrix)",
+      "rotation": [
+        -0.70710678118654746,
+        -0,
+        -0,
+        0.70710678118654757
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0.020491337403655052,
+        -0.9997900128364563,
+        0,
+        0,
+        0.9997900128364563,
+        0.020491337403655052,
+        0,
+        0,
+        -16.435129165649414,
+        -0.40683293342590332,
+        1
+      ],
+      "name": "RootNode (model correction matrix)"
+    },
+    {
+      "children": [
+        3
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        5.0068001747131348,
+        -14.940899848937988,
+        5.681300163269043,
+        1
+      ],
+      "name": "TheRing.obj.cleaner.gles"
+    },
+    {
+      "children": [
+        4,
+        5,
+        6
+      ],
+      "name": ""
+    },
+    {
+      "mesh": 0,
+      "name": ""
+    },
+    {
+      "mesh": 1,
+      "name": ""
+    },
+    {
+      "mesh": 2,
+      "name": ""
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "OSG_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}
+

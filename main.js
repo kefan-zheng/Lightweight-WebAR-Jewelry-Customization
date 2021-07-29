@@ -13,7 +13,7 @@ const wristModesCommonSettings = {
 
   // soft occluder parameters (soft because we apply a fading gradient)
   occluderType: "SOFTCYLINDER",
-  occluderRadiusRange: [3.5, 4.5], // first value: minimum or interior radius of the occluder (full transparency).
+  occluderRadiusRange: [3.5,4.5], // first value: minimum or interior radius of the occluder (full transparency).
                                // second value: maximum or exterior radius of the occluder (full opacity, no occluding effect)
   occluderHeight: 48, // height of the cylinder
   occluderOffset: [0,0,0], // relative to the wrist 3D model
@@ -34,18 +34,19 @@ const ringModesCommonSettings = {
 };
 
 const wristModelCommonSettings = {
-  URL: 'assets/debug/wristPlaceHolder2.glb',
+  URL: 'models/bracelet/bracelet1/scene.gltf',
 
-  scale: 1.35 * 1.462,
-  offset: [0.076, -0.916, -0.504],
+  scale: 3.8,
+  offset: [0, 3.5, 0],
   quaternion: [0,0,0,1], // Format: X,Y,Z,W (and not W,X,Y,Z like Blender)
 };
 
 const ringModelCommonSettings = {
-  URL: 'assets/debug/ringPlaceHolder2.glb',
+  URL:'models/ring/ring1/scene.gltf',
 
-  scale: 0.421,
-  offset: [-1.66, -11.91, 0.26],
+
+  scale: 0.093,
+  offset: [-4.67, -12.28, -3.1],
   quaternion: [0.258, 0.016, -0.005, 0.966], // Format: X,Y,Z,W (and not W,X,Y,Z like Blender)
 };
 
@@ -157,6 +158,7 @@ function main(){
 function set_lighting(three){
   const scene = three.scene;
 
+  console.log("光源已添加");
   // TODO: customize
   const hemiLight = new THREE.HemisphereLight( 0xffffff, 0x000000, 2 );
   scene.add(hemiLight);
@@ -211,6 +213,17 @@ function load_model(modelId, threeLoadingManager){
   new THREE.GLTFLoader(threeLoadingManager).load(modelSettings.URL, function(model){
     const me = model.scene.children[0]; // instance of THREE.Mesh
     me.scale.set(1, 1, 1);
+
+    for(var i=0;i<2;i++)
+      me.add(
+          new THREE.DirectionalLight( 0xffffff, 1 )
+      )
+    me.traverse(function(child){
+      if (child.material){
+        console.log(child)
+        child.material.emissive =  child.material.color;
+        child.material.emissiveMap = child.material.map ;
+      }});
 
     // tweak the material:
     if (_settings.debugMeshMaterial){
