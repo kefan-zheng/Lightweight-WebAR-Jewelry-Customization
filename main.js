@@ -3,6 +3,19 @@ const NNPath = './neuralNets/';
 const NNWristVersion = '14';
 const NNRingVersion = '8';
 
+//戒指模型库参数
+const AllRingModelNum=4;
+const AllRingURL = ["models/ring/ring1/scene.gltf",
+                    "models/ring/ring2/scene.gltf",
+                    "models/ring/ring3/scene.gltf",
+                    "models/ring/ring4/scene.gltf"] ;
+const AllRingScale = [0.093,1,1,1];
+const AllRingOffset = [[-4.67, -12.28, -3.1],
+                        [0,0,0],
+                        [0,0,0],
+                        [0,0,0]];
+
+
 const wristModesCommonSettings = {
   threshold: 0.92, // detection sensitivity, between 0 and 1
 
@@ -42,11 +55,10 @@ const wristModelCommonSettings = {
 };
 
 const ringModelCommonSettings = {
-  URL:'models/ring/ring1/scene.gltf',
+  URL: AllRingURL[0],
 
-
-  scale: 0.093,
-  offset: [-4.67, -12.28, -3.1],
+  scale: AllRingScale[0],
+  offset: AllRingOffset[0],
   quaternion: [0.258, 0.016, -0.005, 0.966], // Format: X,Y,Z,W (and not W,X,Y,Z like Blender)
 };
 
@@ -78,15 +90,6 @@ const _settings = {
       VTOMode: 'ring'
     }, ringModelCommonSettings),
 
-    /*
-    wristDemo1Side: Object.assign({
-      VTOMode: 'wrist1Side'
-    }, wristModelCommonSettings),
-
-    ringDemo1Side: Object.assign({
-      VTOMode: 'ring1Side'
-    }, ringModelCommonSettings)
-    */
   },
   initialModel: 'ringDemo',
 
@@ -97,7 +100,6 @@ const _settings = {
   debugWholeHand: false
 };
 
-//_settings.debugOccluder = true;
 
 let _VTOMode = null;
 let _VTOModel = null;
@@ -214,7 +216,7 @@ function load_model(modelId, threeLoadingManager){
     const me = model.scene.children[0]; // instance of THREE.Mesh
     me.scale.set(1, 1, 1);
 
-    for(var i=0;i<2;i++)
+    for(var i=0; i<2; i++)
       me.add(
           new THREE.DirectionalLight( 0xffffff, 1 )
       )

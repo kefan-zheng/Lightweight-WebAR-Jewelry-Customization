@@ -32,9 +32,21 @@
     <script src="./main.js"></script>
 
     <script>
-      function test() {
-        alert("测试");
-        //console.log("测试");
+      function altermodel(obj) {
+        let modelid=0;
+        for(let i=0;i<AllRingModelNum;i++)
+        {
+          if(obj.src === AllRingURL[i])
+          {
+            modelid = i;
+            break;
+          }
+        }
+        _settings.models['ringDemo'].URL = AllRingURL[modelid];
+        _settings.models['ringDemo'].scale = AllRingScale[modelid];
+        _settings.models['ringDemo'].offset = AllRingOffset[modelid];
+
+        load_model('ringDemo');
       }
     </script>
 
@@ -128,22 +140,25 @@
       <model-viewer src="models/ring/ring1/scene.gltf"
                     environment-image="neutral"
                     interaction-prompt="when-focused"
-                    ondblclick="test()"
+                    ondblclick="altermodel(this)"
                     auto-rotate camera-controls>
       </model-viewer>
       <model-viewer src="models/ring/ring2/scene.gltf"
                     environment-image="neutral"
                     interaction-prompt="when-focused"
+                    ondblclick="altermodel(this)"
                     auto-rotate camera-controls>
       </model-viewer>
       <model-viewer src="models/ring/ring3/scene.gltf"
                     environment-image="neutral"
                     interaction-prompt="when-focused"
+                    ondblclick="altermodel(this)"
                     auto-rotate camera-controls>
       </model-viewer>
       <model-viewer src="models/ring/ring4/scene.gltf"
                     environment-image="neutral"
                     interaction-prompt="when-focused"
+                    ondblclick="altermodel(this)"
                     auto-rotate camera-controls>
       </model-viewer>
     </div>
