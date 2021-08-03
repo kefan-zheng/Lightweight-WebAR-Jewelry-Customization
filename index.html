@@ -26,8 +26,17 @@
      <!-- POSEFLIP FILTER -->
     <script src="./helpers/PoseFlipFilter.js"></script>
 
+    <script type="module" src="libs/model-viewer.min.js"></script>
+
     <!-- INCLUDE MAIN DEMO SCRIPT -->
     <script src="./main.js"></script>
+
+    <script>
+      function test() {
+        alert("测试");
+        //console.log("测试");
+      }
+    </script>
 
     <style type='text/css'>
       body {
@@ -50,6 +59,26 @@
         /* mirror the canvas - useful if camera is in selfie mode only: */
         /*transform: rotateY(180deg);*/
       }
+
+      model-viewer {
+        width: 25%;
+        height: 100px;
+        <!--background-color: #70BCD1;-->
+      }
+
+      .displaybox {
+        position: fixed;
+        bottom: 40px;
+        left: 0;
+        height:100px;
+        width: 100vw;
+        z-index: 3;
+        background: rgba(245, 245, 245, 0.5);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
       .controls {
         position: fixed;
         bottom: 0;
@@ -95,14 +124,34 @@
       <canvas id='VTOCanvas'></canvas>
     </div>
 
+    <div class="displaybox">
+      <model-viewer src="models/ring/ring1/scene.gltf"
+                    environment-image="neutral"
+                    interaction-prompt="when-focused"
+                    ondblclick="test()"
+                    auto-rotate camera-controls>
+      </model-viewer>
+      <model-viewer src="models/ring/ring2/scene.gltf"
+                    environment-image="neutral"
+                    interaction-prompt="when-focused"
+                    auto-rotate camera-controls>
+      </model-viewer>
+      <model-viewer src="models/ring/ring3/scene.gltf"
+                    environment-image="neutral"
+                    interaction-prompt="when-focused"
+                    auto-rotate camera-controls>
+      </model-viewer>
+      <model-viewer src="models/ring/ring4/scene.gltf"
+                    environment-image="neutral"
+                    interaction-prompt="when-focused"
+                    auto-rotate camera-controls>
+      </model-viewer>
+    </div>
+
     <div class='controls'>
       <div onclick='flip_camera()'>转换摄像头</div>
       <div onclick="load_model('ringDemo')">戒指试戴</div>
       <div onclick="load_model('wristDemo')">手镯试戴</div>
-      <!--
-      <div onclick="load_model('ringDemo1Side')">Ring 1 side</div>
-      <div onclick="load_model('wristDemo1Side')">Wrist 1 side</div>
-      -->
     </div>
   </body>
 </html>
