@@ -9,12 +9,17 @@ const AllRingURL = ["models/ring/ring1/scene.gltf",
                     "models/ring/ring2/scene.gltf",
                     "models/ring/ring3/scene.gltf",
                     "models/ring/ring4/scene.gltf"] ;
-const AllRingScale = [0.093,1,1,1];
+const AllRingScale = [0.09,0.21,1.34,1.1];
 const AllRingOffset = [[-4.67, -12.28, -3.1],
-                        [0,0,0],
-                        [0,0,0],
-                        [0,0,0]];
-
+                        [-3.44534,-9.34517,-0.60030],
+                        [-1.70940,-11.86151,0.44340],
+                        [-1.66024,-11.74551,0.26554]];
+//X,Y,Z,W
+const AllQuaternion = [[-0.060, -0.995, -0.083, -0.004],
+    [-0.590,0.051,-0.070,0.802],
+    [-0.414,0.591,-0.471,0.507],
+    [-0.563,0.041,-0.042,0.825]
+];
 
 const wristModesCommonSettings = {
   threshold: 0.92, // detection sensitivity, between 0 and 1
@@ -59,7 +64,7 @@ const ringModelCommonSettings = {
 
   scale: AllRingScale[0],
   offset: AllRingOffset[0],
-  quaternion: [0.258, 0.016, -0.005, 0.966], // Format: X,Y,Z,W (and not W,X,Y,Z like Blender)
+  quaternion: AllQuaternion[0], // Format: X,Y,Z,W (and not W,X,Y,Z like Blender)
 };
 
 const _settings = {
@@ -160,7 +165,6 @@ function main(){
 function set_lighting(three){
   const scene = three.scene;
 
-  console.log("光源已添加");
   // TODO: customize
   const hemiLight = new THREE.HemisphereLight( 0xffffff, 0x000000, 2 );
   scene.add(hemiLight);
@@ -214,7 +218,8 @@ function load_model(modelId, threeLoadingManager){
   // load new model:
   new THREE.GLTFLoader(threeLoadingManager).load(modelSettings.URL, function(model){
     const me = model.scene.children[0]; // instance of THREE.Mesh
-    me.scale.set(1, 1, 1);
+    //me.scale.set(1, 1, 1);
+
 
     for(var i=0; i<2; i++)
       me.add(
