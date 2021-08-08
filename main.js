@@ -358,3 +358,17 @@ function flip_camera(){
     console.log('ERROR in main.js: Cannot flip camera -', err);
   });
 }
+
+function larger(){
+  console.log("larger");
+  _settings.models['ringDemo'].scale = _settings.models['ringDemo'].scale * 1.25;
+  load_model('ringDemo')
+  console.log(_settings.models['ringDemo'].scale)
+}
+
+function smaller(){
+  console.log("smaller")
+  _settings.models['ringDemo'].scale = _settings.models['ringDemo'].scale * 0.8;
+  load_model('ringDemo')
+  console.log(_settings.models['ringDemo'].scale)
+}
