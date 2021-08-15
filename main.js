@@ -94,6 +94,15 @@ const _settings = {
     ringDemo: Object.assign({
       VTOMode: 'ring'
     }, ringModelCommonSettings),
+    
+  initialModels: {
+    wristDemo: Object.assign({
+      VTOMode: 'wrist'
+    }, wristModelCommonSettings),
+
+    ringDemo: Object.assign({
+      VTOMode: 'ring'
+    }, ringModelCommonSettings),
 
   },
   initialModel: 'ringDemo',
@@ -369,6 +378,12 @@ function larger(){
 function smaller(){
   console.log("smaller")
   _settings.models['ringDemo'].scale = _settings.models['ringDemo'].scale * 0.8;
+  load_model('ringDemo')
+  console.log(_settings.models['ringDemo'].scale)
+}
+
+function changeValue(value){
+  _settings.models['ringDemo'].scale = _settings.initialModels['ringDemo'].scale * value;
   load_model('ringDemo')
   console.log(_settings.models['ringDemo'].scale)
 }
